@@ -7,9 +7,9 @@ console.log(buffer1)
 console.log(buffer2)
 console.log(buffer3)
 
-buffer2.writeInt8(30, 3)
+buffer2.writeInt8(30, 3) //数字 偏移
 console.log(buffer2)
-buffer2.writeInt16BE(256, 1)
+buffer2.writeInt16BE(256, 1) //BE LE 低位到高位的顺序
 console.log(buffer2)
 
 const protobuf = require('protocol-buffers')
@@ -19,5 +19,6 @@ let buffer = schema.Column.encode({
     name: 'Node.js',
     price: 80.4
 })
+console.log(buffer)
 let data = schema.Column.decode(buffer)
 console.log(data)
